@@ -30,8 +30,6 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'flazz/vim-colorschemes' "Большой набор цветовых схемы
 Plugin 'vim-airline/vim-airline' "Powerline внизу
 Plugin 'preservim/nerdtree' "Дерево каталогов
-Plugin 'ycm-core/YouCompleteMe' "YouCompleteMe
-Plugin 'mcchrish/nnn.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -120,8 +118,6 @@ inoremap '' ''
 
 inoremap [ []<left>
 inoremap [] []
-
-
 
 
 " Turn off linewise keys. Normally, the `j' and `k' keys move the cursor
