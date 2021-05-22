@@ -10,18 +10,29 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'flazz/vim-colorschemes' 
 Plugin 'preservim/nerdtree' 
 Plugin '42og/stdheader.vim'
+Plugin 'sainnhe/everforest'
+Plugin 'sheerun/vim-polyglot'
 
 call vundle#end()
 filetype plugin indent on 
 
+if has('termguicolors')
+  set termguicolors
+endif
+" For dark version.
 set background=dark
-colorscheme peachpuff
+" Set contrast.
+" This configuration option should be placed before `colorscheme everforest`.
+" Available values: 'hard', 'medium'(default), 'soft'
+let g:everforest_background = 'hard'
+let g:everforest_enable_italic = 1
+colorscheme everforest
 
 if has("gui_running")
 	set background=dark
 	syntax on
 	set hlsearch
-	colorscheme gruvbox 
+	colorscheme everforest
 	set bs=2
 	set ai
 	set ruler
@@ -32,6 +43,9 @@ syntax enable
 set autoindent
 set t_Co=256 
 set mousehide
+set tabstop=4
+set shiftwidth=4
+"set expandtab
 "set mouse=a 
 set termencoding=utf8 
 set wrap 
@@ -44,7 +58,6 @@ set number
 set autoindent
 set relativenumber
 set cindent
-
 
 nmap <C-m> :NERDTreeToggle<CR>
 nmap j gj
