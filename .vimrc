@@ -12,6 +12,7 @@ Plugin 'preservim/nerdtree'
 Plugin '42og/stdheader.vim'
 Plugin 'sainnhe/everforest'
 Plugin 'sheerun/vim-polyglot'
+Plugin 'mileszs/ack.vim'
 
 call vundle#end()
 filetype plugin indent on 
@@ -21,11 +22,13 @@ if has('termguicolors')
 endif
 " For dark version.
 set background=dark
-" Set contrast.
 " This configuration option should be placed before `colorscheme everforest`.
 " Available values: 'hard', 'medium'(default), 'soft'
 let g:everforest_background = 'hard'
 let g:everforest_enable_italic = 1
+let g:everforest_cursor = 'green'
+let g:everforest_better_performance = 1
+
 colorscheme everforest
 
 if has("gui_running")
@@ -40,6 +43,7 @@ endif
 
 syntax enable
 
+filetype plugin on
 set autoindent
 set t_Co=256 
 set mousehide
@@ -65,10 +69,14 @@ nmap k gk
 nmap <S-e> O<Esc>j
 nmap <S-e> o<Esc>k
 
-vmap cc :norm ^i//<CR>
-vmap uc :norm ^xx<CR>
+" Клавиши для комментов (сейчас использую vim-comment)
+
+" vmap cc :norm ^i//<CR>
+" vmap uc :norm ^xx<CR>
 
 noremap { {}<Left><enter><up><end>
 inoremap {} {}<Left>
 
 imap {<CR> {<CR>}<ESC>O
+map <C-K> :pyf <path-to-this-file>/clang-format.py<cr>
+imap <C-K> <c-o>:pyf <path-to-this-file>/clang-format.py<cr>
